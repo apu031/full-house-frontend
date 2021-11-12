@@ -1,0 +1,13 @@
+<p>Let's play!</p>
+
+<button class="btn" (click)="getDeal()">Deal</button>
+
+<div *ngFor="let h of hands; let i = index">
+  <div>For player: {{i}}</div>
+  <div class="hand">
+    <app-card *ngFor="let c of h.cards; let i = index" [card]="c"></app-card>
+  </div>
+  <div>Has pairs: {{h.hasPairs}}</div>
+  <div>Has 3 of a kind: {{h.hasThreeOfAKind}}</div>
+  <div>Has Full House: {{h.hasFullHouse}}</div>
+</div>
